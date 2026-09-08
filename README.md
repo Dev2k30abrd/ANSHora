@@ -1,4 +1,4 @@
-# AI Data Analytics Agent
+# ANSHora
 
 An AI-powered data analytics system that allows users to upload datasets and analyze them using natural language.
 
