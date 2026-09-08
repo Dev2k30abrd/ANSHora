@@ -1,0 +1,61 @@
+Order_ID,Order_Date,Region,Category,Product,Sales,Quantity,Profit,Discount,Customer_Type
+1001,2025-01-05,North,Electronics,Laptop,50000,2,8000,0.10,Corporate
+1002,2025-01-07,South,Furniture,Chair,12000,10,2500,0.05,Retail
+1003,2025-01-10,East,Electronics,Smartphone,35000,5,6000,0.08,Corporate
+1004,2025-01-12,West,Office Supplies,Printer,18000,3,3000,0.10,Retail
+1005,2025-01-15,North,Furniture,Desk,22000,4,4000,0.05,Corporate
+1006,2025-02-02,South,Electronics,Laptop,48000,2,7000,0.12,Corporate
+1007,2025-02-05,East,Office Supplies,Notebook,5000,50,1200,0.02,Retail
+1008,2025-02-10,West,Electronics,Smartphone,32000,4,5500,0.10,Corporate
+1009,2025-02-14,North,Office Supplies,Printer,16000,2,2500,0.08,Retail
+1010,2025-02-18,South,Furniture,Chair,14000,12,2800,0.05,Corporate
+1011,2025-03-01,East,Electronics,Laptop,52000,2,9000,0.05,Corporate
+1012,2025-03-04,West,Furniture,Desk,24000,5,4500,0.07,Retail
+1013,2025-03-08,North,Electronics,Smartphone,38000,6,6500,0.10,Corporate
+1014,2025-03-12,South,Office Supplies,Printer,15000,2,2200,0.10,Retail
+1015,2025-03-15,East,Furniture,Chair,11000,9,2000,0.05,Retail
+1016,2025-04-03,West,Electronics,Laptop,55000,2,9500,0.05,Corporate
+1017,2025-04-06,North,Office Supplies,Notebook,6000,60,1500,0.02,Retail
+1018,2025-04-10,South,Electronics,Smartphone,34000,5,5800,0.08,Corporate
+1019,2025-04-14,East,Furniture,Desk,21000,4,3800,0.06,Corporate
+1020,2025-04-18,West,Office Supplies,Printer,17000,3,2700,0.10,Retail
+1021,2025-05-02,North,Electronics,Laptop,53000,2,8800,0.07,Corporate
+1022,2025-05-05,South,Furniture,Chair,13000,11,2600,0.05,Retail
+1023,2025-05-09,East,Electronics,Smartphone,36000,5,6200,0.08,Corporate
+1024,2025-05-12,West,Furniture,Desk,23000,4,4300,0.05,Corporate
+1025,2025-05-16,North,Office Supplies,Printer,19000,3,3100,0.10,Retail
+1026,2025-06-01,South,Electronics,Laptop,51000,2,8500,0.05,Corporate
+1027,2025-06-04,East,Office Supplies,Notebook,5500,55,1300,0.02,Retail
+1028,2025-06-08,West,Electronics,Smartphone,33000,4,5600,0.10,Corporate
+1029,2025-06-12,North,Furniture,Desk,25000,5,4700,0.06,Corporate
+1030,2025-06-16,South,Office Supplies,Printer,14500,2,2100,0.08,Retail
+1031,2025-07-03,East,Electronics,Laptop,54000,2,9200,0.05,Corporate
+1032,2025-07-07,West,Furniture,Chair,12500,10,2400,0.05,Retail
+1033,2025-07-11,North,Electronics,Smartphone,39000,6,6800,0.10,Corporate
+1034,2025-07-15,South,Furniture,Desk,20000,4,3500,0.05,Corporate
+1035,2025-07-20,East,Office Supplies,Printer,17500,3,2900,0.10,Retail
+1036,2025-08-02,West,Electronics,Laptop,56000,2,9800,0.05,Corporate
+1037,2025-08-06,North,Office Supplies,Notebook,6200,62,1600,0.02,Retail
+1038,2025-08-10,South,Electronics,Smartphone,34500,5,5900,0.08,Corporate
+1039,2025-08-14,East,Furniture,Desk,21500,4,3900,0.06,Corporate
+1040,2025-08-18,West,Office Supplies,Printer,16500,3,2600,0.10,Retail
+1041,2025-09-03,North,Electronics,Laptop,57000,2,10000,0.05,Corporate
+1042,2025-09-07,South,Furniture,Chair,13500,11,2700,0.05,Retail
+1043,2025-09-11,East,Electronics,Smartphone,37000,5,6400,0.08,Corporate
+1044,2025-09-15,West,Furniture,Desk,23500,4,4400,0.05,Corporate
+1045,2025-09-20,North,Office Supplies,Printer,18500,3,3000,0.10,Retail
+1046,2025-10-02,South,Electronics,Laptop,52000,2,8700,0.05,Corporate
+1047,2025-10-06,East,Office Supplies,Notebook,5800,58,1400,0.02,Retail
+1048,2025-10-10,West,Electronics,Smartphone,35000,5,6000,0.08,Corporate
+1049,2025-10-14,North,Furniture,Desk,24500,5,4600,0.06,Corporate
+1050,2025-10-18,South,Office Supplies,Printer,15000,2,2300,0.10,Retail
+1051,2025-11-04,East,Electronics,Laptop,58000,2,10500,0.05,Corporate
+1052,2025-11-08,West,Furniture,Chair,14000,12,2900,0.05,Retail
+1053,2025-11-12,North,Electronics,Smartphone,40000,6,7000,0.10,Corporate
+1054,2025-11-16,South,Furniture,Desk,21000,4,3700,0.05,Corporate
+1055,2025-11-21,East,Office Supplies,Printer,18000,3,3200,0.10,Retail
+1056,2025-12-03,West,Electronics,Laptop,59000,2,11000,0.05,Corporate
+1057,2025-12-07,North,Office Supplies,Notebook,6500,65,1700,0.02,Retail
+1058,2025-12-11,South,Electronics,Smartphone,35500,5,6100,0.08,Corporate
+1059,2025-12-15,East,Furniture,Desk,22000,4,4000,0.06,Corporate
+1060,2025-12-20,West,Office Supplies,Printer,17000,3,2800,0.10,Retail
