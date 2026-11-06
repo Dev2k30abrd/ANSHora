@@ -480,6 +480,7 @@ def generate_auto_insights(dataset_id: str) -> dict:
             "content": f"AUTOMATIC EDA RESULT:\n{json.dumps(eda, indent=2, default=str)}",
         },
     ])
+    
 
     result = {"analysis_result": eda, "answer": narrative}
     dataset_store.set_cached_insights(dataset_id, result)
