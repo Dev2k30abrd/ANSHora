@@ -1,0 +1,8 @@
+[
+  {"q": "Where am I losing money?", "expect_tools": ["profit_impact_analysis"], "min_verified": 0.9},
+  {"q": "Sales by Region", "expect_tools": ["group_analysis"], "min_verified": 0.9},
+  {"q": "why did Sales change?", "expect_tools": ["root_cause_analysis"], "min_verified": 0.9},
+  {"q": "what if price changes?", "expect_tools": ["sensitivity_analysis"], "min_verified": 0.9},
+  {"q": "give me a dashboard", "expect_tools": ["auto_dashboard"], "min_verified": 0.0},
+  {"q": "how is the data quality?", "expect_tools": ["data_health_score"], "min_verified": 0.0}
+]

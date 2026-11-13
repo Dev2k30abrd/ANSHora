@@ -14,15 +14,27 @@ SUPPORTED_EXTENSIONS = [
 
 
 def save_uploaded_file(file: UploadFile) -> Path:
-    """Save the uploaded dataset locally."""
+    """Stream the upload to a unique temp file (size-capped). Caller deletes it after loading."""
+    import uuid
+
+    from app.core.config import MAX_UPLOAD_MB
 
     UPLOAD_DIR.mkdir(exist_ok=True)
-
     safe_name = Path(file.filename).name
-    file_path = UPLOAD_DIR / safe_name
+    file_path = UPLOAD_DIR / f"{uuid.uuid4().hex[:8]}_{safe_name}"
+    limit, written = MAX_UPLOAD_MB * 1024 * 1024, 0
 
     with open(file_path, "wb") as buffer:
-        buffer.write(file.file.read())
+        while True:
+            chunk = file.file.read(1024 * 1024)
+            if not chunk:
+                break
+            written += len(chunk)
+            if written > limit:
+                buffer.close()
+                file_path.unlink(missing_ok=True)
+                raise ValueError(f"File too large (limit {MAX_UPLOAD_MB} MB).")
+            buffer.write(chunk)
 
     return file_path
 

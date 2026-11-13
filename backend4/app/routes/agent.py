@@ -1,15 +1,14 @@
+import json
+
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-import json
 
-from app.agents.analytics_agent import (
-    run_analytics_agent,
-    stream_analytics_agent,
-    AIServiceError,
-)
-from app.services.dataset_manager import DatasetNotFoundError
-
+from app.agents.agent import run_agent, run_agent_stream
+from app.core import db
+from app.core.jsonutil import jsonable
+from app.llm.client import LLMError, LLMAuthError, LLMQuotaError, LLMRateLimitError, LLMTimeoutError
+from app.services.dataset_manager import DatasetNotFoundError, dataset_store
 
 router = APIRouter(prefix="/api/agent", tags=["AI Agent"])
 
@@ -23,48 +22,68 @@ class AgentQuery(BaseModel):
     question: str
     dataset_id: str
     history: list[HistoryMessage] = []
+    pending_action: dict | None = None
+
+
+def project_for(dataset_id: str):
+    meta = dataset_store.get_meta(dataset_id)
+    if meta.get("project_id"):
+        return db.one("SELECT * FROM projects WHERE id=?", (meta["project_id"],))
+    return None
 
 
 @router.post("/query")
-def query_agent(request: AgentQuery):
+def query_agent(req: AgentQuery):
     try:
-        result = run_analytics_agent(
-            request.question,
-            request.dataset_id,
-            [h.dict() for h in request.history],
+        res = run_agent(
+            req.question,
+            req.dataset_id,
+            [h.model_dump() for h in req.history],
+            project_for(req.dataset_id),
+            pending_action=req.pending_action,
         )
-        return result
+        return jsonable(res)
+    except DatasetNotFoundError as e:
+        raise HTTPException(404, str(e))
+    except LLMAuthError as e:
+        raise HTTPException(502, str(e))
+    except LLMQuotaError as e:
+        raise HTTPException(402, str(e))
+    except LLMRateLimitError as e:
+        raise HTTPException(429, str(e))
+    except LLMTimeoutError as e:
+        raise HTTPException(504, str(e))
+    except LLMError as e:
+        raise HTTPException(getattr(e, "status_code", 502), str(e))
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    except Exception as e:  # noqa: BLE001
+        raise HTTPException(500, f"Error processing query: {e}")
 
-    except DatasetNotFoundError as error:
-        raise HTTPException(status_code=404, detail=str(error))
-    except AIServiceError as error:
-        raise HTTPException(status_code=503, detail=str(error))
-    except ValueError as error:
-        raise HTTPException(status_code=400, detail=str(error))
-    except Exception as error:
-        raise HTTPException(status_code=400, detail=str(error))
+
+def sse(ev: dict) -> str:
+    return f"data: {json.dumps(jsonable(ev))}\n\n"
 
 
 @router.post("/stream")
-def stream_query_agent(request: AgentQuery):
-    def generate():
+def stream_query(req: AgentQuery):
+    try:
+        proj = project_for(req.dataset_id)
+    except DatasetNotFoundError as e:
+        raise HTTPException(404, str(e))
+
+    def gen():
         try:
-            for event in stream_analytics_agent(
-                request.question,
-                request.dataset_id,
-                [h.dict() for h in request.history],
+            for ev in run_agent_stream(
+                req.question,
+                req.dataset_id,
+                [h.model_dump() for h in req.history],
+                proj,
+                pending_action=req.pending_action,
             ):
-                yield f"data: {json.dumps(event)}\n\n"
+                yield sse(ev)
+        except Exception as e:  # noqa: BLE001
+            yield sse({"type": "error", "message": str(e)})
 
-        except Exception as error:
-            yield f"data: {json.dumps({'type': 'error', 'message': str(error)})}\n\n"
-
-    return StreamingResponse(
-        generate(),
-        media_type="text/event-stream",
-        headers={
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-            "X-Accel-Buffering": "no",
-        },
-    )
+    return StreamingResponse(gen(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})

@@ -1,0 +1,18 @@
+# ANSHora — Business Intelligence Analyst Skill
+#
+# Core CSV analysis requires Python standard library only (Python 3.8+).
+# No external third-party packages are required.
+#
+# Standard library modules utilized:
+# - csv
+# - json
+# - sys
+# - math
+# - re
+# - pathlib
+# - datetime
+# - collections (Counter, defaultdict)
+#
+# Optional: If analyzing Excel files (.xlsx) in an environment without native
+# agent spreadsheet capabilities, openpyxl or pandas may be optionally installed:
+# openpyxl>=3.1.0

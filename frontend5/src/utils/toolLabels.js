@@ -1,0 +1,26 @@
+export const LABELS = {
+  profit_impact_analysis: "Profit impact analysis",
+  sensitivity_analysis: "Price / volume sensitivity",
+  sql_query: "SQL query",
+  python_analysis: "Custom analysis (Python)",
+  basic_statistics: "Basic statistics",
+  column_analysis: "Column analysis",
+  group_analysis: "Group analysis",
+  correlation_analysis: "Correlation analysis",
+  missing_value_report: "Missing values",
+  outlier_detection: "Outlier detection",
+  distribution_analysis: "Distribution",
+  pivot_table_analysis: "Pivot table",
+  trend_analysis: "Trend analysis",
+  top_n_analysis: "Top / bottom N",
+  filter_analysis: "Filter rows",
+  full_eda_summary: "Full data overview",
+  root_cause_analysis: "Root-cause analysis",
+  forecast_analysis: "Forecast",
+  what_if_analysis: "What-if simulation",
+  data_health_score: "Data health score",
+  auto_dashboard: "Dashboard",
+  proactive_insights_scan: "Insight scan",
+};
+
+export const toolLabel = (name) => LABELS[name] || name;

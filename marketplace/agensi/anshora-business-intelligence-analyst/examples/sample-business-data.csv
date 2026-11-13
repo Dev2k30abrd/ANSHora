@@ -1,0 +1,26 @@
+Order_ID,Date,Customer_Segment,Product_Category,Region,Revenue,Cost,Quantity,Discount_Pct,Returned
+ORD-1001,2025-01-15,Corporate,Electronics,North,12500.00,8500.00,5,0.05,No
+ORD-1002,2025-01-18,Consumer,Office Supplies,West,1200.00,600.00,10,0.00,No
+ORD-1003,2025-01-22,Small Business,Furniture,South,4500.00,3100.00,2,0.10,No
+ORD-1004,2025-02-05,Consumer,Electronics,East,8900.00,6200.00,3,0.00,No
+ORD-1005,2025-02-12,Corporate,Furniture,North,15400.00,11200.00,4,0.15,No
+ORD-1006,2025-02-18,Small Business,Office Supplies,South,2100.00,1100.00,15,0.05,No
+ORD-1007,2025-02-25,Corporate,Electronics,West,22000.00,14500.00,8,0.08,No
+ORD-1008,2025-03-04,Consumer,Furniture,North,3800.00,2900.00,1,0.00,Yes
+ORD-1009,2025-03-11,Small Business,Electronics,East,11200.00,7800.00,4,0.05,No
+ORD-1010,2025-03-19,Corporate,Office Supplies,West,3400.00,1800.00,20,0.00,No
+ORD-1011,2025-03-27,Consumer,Electronics,South,6700.00,4800.00,2,0.10,No
+ORD-1012,2025-04-03,Corporate,Furniture,East,18500.00,13200.00,6,0.12,No
+ORD-1013,2025-04-10,Small Business,Office Supplies,North,1950.00,950.00,12,0.00,No
+ORD-1014,2025-04-17,Consumer,Electronics,West,14200.00,9800.00,5,0.05,No
+ORD-1015,2025-04-24,Corporate,Electronics,North,28000.00,18900.00,10,0.10,No
+ORD-1016,2025-05-02,Consumer,Furniture,South,5200.00,3900.00,2,0.00,No
+ORD-1017,2025-05-09,Small Business,Electronics,West,9600.00,6500.00,3,0.05,No
+ORD-1018,2025-05-16,Corporate,Office Supplies,East,4100.00,2200.00,25,0.00,No
+ORD-1019,2025-05-23,Consumer,Electronics,North,7800.00,5400.00,3,0.08,No
+ORD-1020,2025-05-30,Small Business,Furniture,South,6400.00,4600.00,2,0.10,Yes
+ORD-1021,2025-06-06,Corporate,Electronics,East,31500.00,21000.00,11,0.12,No
+ORD-1022,2025-06-13,Consumer,Office Supplies,North,1650.00,850.00,14,0.00,No
+ORD-1023,2025-06-20,Small Business,Electronics,West,13400.00,9100.00,4,0.05,No
+ORD-1024,2025-06-27,Corporate,Furniture,West,21000.00,15200.00,7,0.15,No
+ORD-1024,2025-06-27,Corporate,Furniture,West,21000.00,15200.00,7,0.15,No

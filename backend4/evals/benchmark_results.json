@@ -1,0 +1,464 @@
+{
+  "timestamp": "2026-11-13T18:42:26Z",
+  "total_tests": 48,
+  "passed_tests": 48,
+  "failed_tests": 0,
+  "overall_weighted_accuracy": 100.0,
+  "weighted_formula": "sum(Category_Accuracy * Category_Weight)",
+  "category_breakdown": {
+    "Data Health": {
+      "total": 15,
+      "passed": 15,
+      "accuracy_pct": 100.0,
+      "weight": 0.16
+    },
+    "Descriptive Analytics": {
+      "total": 10,
+      "passed": 10,
+      "accuracy_pct": 100.0,
+      "weight": 0.16
+    },
+    "Financial P&L": {
+      "total": 9,
+      "passed": 9,
+      "accuracy_pct": 100.0,
+      "weight": 0.2
+    },
+    "Diagnostic & Root Cause": {
+      "total": 5,
+      "passed": 5,
+      "accuracy_pct": 100.0,
+      "weight": 0.16
+    },
+    "Forecasting": {
+      "total": 4,
+      "passed": 4,
+      "accuracy_pct": 100.0,
+      "weight": 0.16
+    },
+    "Decision Intelligence": {
+      "total": 5,
+      "passed": 5,
+      "accuracy_pct": 100.0,
+      "weight": 0.16
+    }
+  },
+  "dataset_breakdown": {
+    "01_retail_sales": {
+      "total": 19,
+      "passed": 19,
+      "accuracy_pct": 100.0
+    },
+    "02_financial_pnl": {
+      "total": 14,
+      "passed": 14,
+      "accuracy_pct": 100.0
+    },
+    "03_customer_ecommerce": {
+      "total": 4,
+      "passed": 4,
+      "accuracy_pct": 100.0
+    },
+    "04_inventory_supply_chain": {
+      "total": 2,
+      "passed": 2,
+      "accuracy_pct": 100.0
+    },
+    "05_timeseries_monthly": {
+      "total": 4,
+      "passed": 4,
+      "accuracy_pct": 100.0
+    },
+    "06_data_quality_challenge": {
+      "total": 5,
+      "passed": 5,
+      "accuracy_pct": 100.0
+    }
+  },
+  "detailed_results": [
+    {
+      "category": "Data Health",
+      "dataset": "01_retail_sales",
+      "metric": "total_rows",
+      "actual": 120,
+      "expected": 120,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "01_retail_sales",
+      "metric": "total_columns",
+      "actual": 13,
+      "expected": 13,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "01_retail_sales",
+      "metric": "duplicate_rows",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "01_retail_sales",
+      "metric": "duplicate_percentage",
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "01_retail_sales",
+      "metric": "missing_percentage",
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "02_financial_pnl",
+      "metric": "total_rows",
+      "actual": 24,
+      "expected": 24,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "02_financial_pnl",
+      "metric": "total_columns",
+      "actual": 14,
+      "expected": 14,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "02_financial_pnl",
+      "metric": "duplicate_rows",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "02_financial_pnl",
+      "metric": "duplicate_percentage",
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "02_financial_pnl",
+      "metric": "missing_percentage",
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "06_data_quality_challenge",
+      "metric": "total_rows",
+      "actual": 55,
+      "expected": 55,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "06_data_quality_challenge",
+      "metric": "total_columns",
+      "actual": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "06_data_quality_challenge",
+      "metric": "duplicate_rows",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "06_data_quality_challenge",
+      "metric": "duplicate_percentage",
+      "actual": 3.64,
+      "expected": 3.64,
+      "passed": true
+    },
+    {
+      "category": "Data Health",
+      "dataset": "06_data_quality_challenge",
+      "metric": "missing_percentage",
+      "actual": 3.12,
+      "expected": 3.12,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "revenue_sum",
+      "actual": 212399.75,
+      "expected": 212399.75,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "revenue_mean",
+      "actual": 1769.9979166666667,
+      "expected": 1770.0,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "revenue_median",
+      "actual": 834.5,
+      "expected": 834.5,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "revenue_std",
+      "actual": 1743.4838259534183,
+      "expected": 1743.48,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "group_sum_Apparel",
+      "actual": 18802.0,
+      "expected": 18802.0,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "group_sum_Electronics",
+      "actual": 109520.0,
+      "expected": 109520.0,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "group_sum_Furniture",
+      "actual": 73578.75,
+      "expected": 73578.75,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "01_retail_sales",
+      "metric": "group_sum_Office Supplies",
+      "actual": 10499.0,
+      "expected": 10499.0,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "03_customer_ecommerce",
+      "metric": "total_spend_sum",
+      "actual": 80610.0,
+      "expected": 80610.0,
+      "passed": true
+    },
+    {
+      "category": "Descriptive Analytics",
+      "dataset": "03_customer_ecommerce",
+      "metric": "total_spend_mean",
+      "actual": 806.1,
+      "expected": 806.1,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "total_revenue",
+      "actual": 4170000.0,
+      "expected": 4170000.0,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "total_cogs",
+      "actual": 2168400.0,
+      "expected": 2168400.0,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "total_gross_profit",
+      "actual": 2001600.0,
+      "expected": 2001600.0,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "gross_margin_pct",
+      "actual": 48.0,
+      "expected": 48.0,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "total_opex",
+      "actual": 1334400.0,
+      "expected": 1334400.0,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "total_ebitda",
+      "actual": 667200.0,
+      "expected": 667200.0,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "ebitda_margin_pct",
+      "actual": 16.0,
+      "expected": 16.0,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "total_net_profit",
+      "actual": 407253.6,
+      "expected": 407253.6,
+      "passed": true
+    },
+    {
+      "category": "Financial P&L",
+      "dataset": "02_financial_pnl",
+      "metric": "net_margin_pct",
+      "actual": 9.766273381294964,
+      "expected": 9.77,
+      "passed": true
+    },
+    {
+      "category": "Diagnostic & Root Cause",
+      "dataset": "01_retail_sales",
+      "metric": "lowest_profit_category",
+      "actual": "Office Supplies",
+      "expected": "Office Supplies",
+      "passed": true
+    },
+    {
+      "category": "Diagnostic & Root Cause",
+      "dataset": "01_retail_sales",
+      "metric": "category_profit_Apparel",
+      "actual": 6361.0,
+      "expected": 6361.0,
+      "passed": true
+    },
+    {
+      "category": "Diagnostic & Root Cause",
+      "dataset": "01_retail_sales",
+      "metric": "category_profit_Electronics",
+      "actual": 36840.25,
+      "expected": 36840.25,
+      "passed": true
+    },
+    {
+      "category": "Diagnostic & Root Cause",
+      "dataset": "01_retail_sales",
+      "metric": "category_profit_Furniture",
+      "actual": 5923.0,
+      "expected": 5923.0,
+      "passed": true
+    },
+    {
+      "category": "Diagnostic & Root Cause",
+      "dataset": "01_retail_sales",
+      "metric": "category_profit_Office Supplies",
+      "actual": 3570.0,
+      "expected": 3570.0,
+      "passed": true
+    },
+    {
+      "category": "Forecasting",
+      "dataset": "05_timeseries_monthly",
+      "metric": "forecast_reliable",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "category": "Forecasting",
+      "dataset": "05_timeseries_monthly",
+      "metric": "historical_periods",
+      "actual": 36,
+      "expected": 36,
+      "passed": true
+    },
+    {
+      "category": "Forecasting",
+      "dataset": "05_timeseries_monthly",
+      "metric": "trend_slope",
+      "actual": 1959.7876,
+      "expected": 1959.79,
+      "passed": true
+    },
+    {
+      "category": "Forecasting",
+      "dataset": "05_timeseries_monthly",
+      "metric": "next_period_forecast",
+      "actual": 130263.57,
+      "expected": 130263.57,
+      "passed": true
+    },
+    {
+      "category": "Decision Intelligence",
+      "dataset": "01_retail_sales",
+      "metric": "returns_revenue_loss",
+      "actual": 19162.75,
+      "expected": 19162.75,
+      "passed": true
+    },
+    {
+      "category": "Decision Intelligence",
+      "dataset": "03_customer_ecommerce",
+      "metric": "revenue_at_risk_churn",
+      "actual": 14310.0,
+      "expected": 14310.0,
+      "passed": true
+    },
+    {
+      "category": "Decision Intelligence",
+      "dataset": "03_customer_ecommerce",
+      "metric": "churned_customer_count",
+      "actual": 22,
+      "expected": 22,
+      "passed": true
+    },
+    {
+      "category": "Decision Intelligence",
+      "dataset": "04_inventory_supply_chain",
+      "metric": "total_holding_cost",
+      "actual": 395018.73,
+      "expected": 395018.73,
+      "passed": true
+    },
+    {
+      "category": "Decision Intelligence",
+      "dataset": "04_inventory_supply_chain",
+      "metric": "stockout_sku_count",
+      "actual": 16,
+      "expected": 16,
+      "passed": true
+    }
+  ]
+}

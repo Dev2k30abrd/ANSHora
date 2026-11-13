@@ -1,0 +1,220 @@
+{
+  "01_retail_sales": {
+    "data_health": {
+      "rows": 120,
+      "columns": 13,
+      "duplicate_rows": 0,
+      "duplicate_percentage": 0.0,
+      "overall_missing_percentage": 0.0,
+      "missing_columns": {},
+      "outlier_counts": {
+        "discount": 27,
+        "profit": 9
+      }
+    },
+    "descriptive": {
+      "metric": "revenue",
+      "count": 120,
+      "sum": 212399.75,
+      "mean": 1770.0,
+      "median": 834.5,
+      "std": 1743.48,
+      "min": 63.0,
+      "max": 6580.0,
+      "groups": {
+        "category": {
+          "Apparel": 18802.0,
+          "Electronics": 109520.0,
+          "Furniture": 73578.75,
+          "Office Supplies": 10499.0
+        },
+        "region": {
+          "East": 86224.5,
+          "North": 96874.25,
+          "South": 15060.5,
+          "West": 14240.5
+        }
+      }
+    },
+    "diagnostic": {
+      "category_profit": {
+        "Apparel": 6361.0,
+        "Electronics": 36840.25,
+        "Furniture": 5923.0,
+        "Office Supplies": 3570.0
+      },
+      "lowest_profit_category": "Office Supplies"
+    },
+    "decision_intelligence": {
+      "returns_revenue_loss": 19162.75,
+      "total_discounts_granted": 8810.25,
+      "total_profit": 52694.25
+    }
+  },
+  "02_financial_pnl": {
+    "data_health": {
+      "rows": 24,
+      "columns": 14,
+      "duplicate_rows": 0,
+      "duplicate_percentage": 0.0,
+      "overall_missing_percentage": 0.0,
+      "missing_columns": {},
+      "outlier_counts": {}
+    },
+    "financial": {
+      "total_revenue": 4170000.0,
+      "total_cogs": 2168400.0,
+      "total_gross_profit": 2001600.0,
+      "gross_margin_pct": 48.0,
+      "total_opex": 1334400.0,
+      "total_ebitda": 667200.0,
+      "ebitda_margin_pct": 16.0,
+      "total_net_profit": 407253.6,
+      "net_margin_pct": 9.77
+    },
+    "descriptive": {
+      "metric": "net_profit",
+      "count": 24,
+      "sum": 407253.6,
+      "mean": 16968.9,
+      "median": 17468.1,
+      "std": 4026.13,
+      "min": 10530.0,
+      "max": 24406.2
+    }
+  },
+  "03_customer_ecommerce": {
+    "data_health": {
+      "rows": 100,
+      "columns": 8,
+      "duplicate_rows": 0,
+      "duplicate_percentage": 0.0,
+      "overall_missing_percentage": 0.0,
+      "missing_columns": {},
+      "outlier_counts": {
+        "total_spend": 2
+      }
+    },
+    "descriptive": {
+      "metric": "total_spend",
+      "count": 100,
+      "sum": 80610.0,
+      "mean": 806.1,
+      "median": 667.5,
+      "std": 623.42,
+      "min": 60.0,
+      "max": 2295.0,
+      "groups": {
+        "acquisition_channel": {
+          "Email Marketing": 16605.0,
+          "Organic Search": 15135.0,
+          "Paid Ads": 17475.0,
+          "Referral": 16710.0,
+          "Social Media": 14685.0
+        }
+      }
+    },
+    "decision_intelligence": {
+      "churned_customers_count": 22,
+      "churn_rate_percentage": 22.0,
+      "revenue_at_risk_churn": 14310.0,
+      "total_customer_revenue": 80610.0
+    }
+  },
+  "04_inventory_supply_chain": {
+    "data_health": {
+      "rows": 80,
+      "columns": 12,
+      "duplicate_rows": 0,
+      "duplicate_percentage": 0.0,
+      "overall_missing_percentage": 0.0,
+      "missing_columns": {},
+      "outlier_counts": {
+        "total_holding_cost": 1
+      }
+    },
+    "descriptive": {
+      "metric": "stock_on_hand",
+      "count": 80,
+      "sum": 31938.0,
+      "mean": 399.23,
+      "median": 414.0,
+      "std": 233.25,
+      "min": 21.0,
+      "max": 795.0,
+      "groups": {
+        "category": {
+          "Industrial Components": 8206.0,
+          "Packaging Supplies": 8824.0,
+          "Raw Materials": 6068.0,
+          "Safety Gear": 8840.0
+        },
+        "warehouse": {
+          "Central-Hub": 8206.0,
+          "East-DC": 8840.0,
+          "South-DC": 8824.0,
+          "West-DC": 6068.0
+        }
+      }
+    },
+    "decision_intelligence": {
+      "total_holding_cost": 395018.73,
+      "total_lost_sales_stockout": 8325.1,
+      "stockout_sku_count": 16
+    }
+  },
+  "05_timeseries_monthly": {
+    "data_health": {
+      "rows": 36,
+      "columns": 6,
+      "duplicate_rows": 0,
+      "duplicate_percentage": 0.0,
+      "overall_missing_percentage": 0.0,
+      "missing_columns": {},
+      "outlier_counts": {}
+    },
+    "descriptive": {
+      "metric": "revenue",
+      "count": 36,
+      "sum": 3384270.0,
+      "mean": 94007.5,
+      "median": 94350.0,
+      "std": 22191.03,
+      "min": 55620.0,
+      "max": 153750.0
+    },
+    "forecasting": {
+      "historical_periods": 36,
+      "trend_slope": 1959.79,
+      "trend_intercept": 59711.22,
+      "residual_std": 8017.47,
+      "next_period_forecast": 130263.57,
+      "forecast_6_periods": [
+        130263.57,
+        132223.36,
+        134183.15,
+        136142.93,
+        138102.72,
+        140062.51
+      ],
+      "confidence_band_half_width": 15714.25
+    }
+  },
+  "06_data_quality_challenge": {
+    "data_health": {
+      "rows": 55,
+      "columns": 7,
+      "duplicate_rows": 2,
+      "duplicate_percentage": 3.64,
+      "overall_missing_percentage": 3.12,
+      "missing_columns": {
+        "customer_name": 5,
+        "segment": 4,
+        "sales_amount": 3
+      },
+      "outlier_counts": {
+        "sales_amount": 2
+      }
+    }
+  }
+}

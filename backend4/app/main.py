@@ -1,56 +1,54 @@
-from fastapi import FastAPI
+import logging
+from contextlib import asynccontextmanager
+
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes.dataset import router as dataset_router
-from app.routes.analytics import router as analytics_router
-from app.routes.agent import router as agent_router
+from app.core import config as cfg
+from app.core import db
+from app.core.security import require_user
+from app.routes import (agent, alerts, analytics, auth, chats, dashboard, dataset, decisions, export, forecast,
+                        gmail, insights, memory, monitors, profit, projects, reports, root_cause, semantic, system, whatif, workspaces)
+from app.services.monitors import start_scheduler, stop_scheduler
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
 
-app = FastAPI(
-    title="DataMind Analyst API",
-    description="Backend for the AI senior-data-analyst agent",
-    version="0.2.0",
-)
+@asynccontextmanager
+async def lifespan(_app):
+    db.init_db()
+    start_scheduler()
+    if cfg.use_mock_llm():
+        logging.getLogger("anshora").warning("No LLM key configured — running in DEMO mode (offline brain).")
+    yield
+    stop_scheduler()
 
 
-# Allowed frontend URLs
-origins = [
-    # Local development
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "http://127.0.0.1:5173",
-    "http://127.0.0.1:5174",
+app = FastAPI(title="Anshora Analyst API", version="1.0.0",
+              description="Verified AI data analyst: money-first insights with proof.", lifespan=lifespan)
 
-    # Production - Vercel
-    "https://anshora.vercel.app",
-]
+app.add_middleware(CORSMiddleware, allow_origins=cfg.CORS_ORIGINS, allow_credentials=True,
+                   allow_methods=["*"], allow_headers=["*"])
 
+# public
+app.include_router(system.router)
+app.include_router(auth.router)
+app.include_router(gmail.router)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-
-# Routes
-app.include_router(dataset_router)
-app.include_router(analytics_router)
-app.include_router(agent_router)
+# everything else requires a signed-in user (tenant-scoped through the workspace context)
+protected = [dataset.router, analytics.router, agent.router, dashboard.router, insights.router, root_cause.router,
+             forecast.router, whatif.router, alerts.router, reports.router, semantic.router, chats.router,
+             projects.router, profit.router, decisions.router, monitors.router, export.router,
+             workspaces.router, memory.router]
+for r in protected:
+    app.include_router(r, dependencies=[Depends(require_user)])
 
 
 @app.get("/")
 def root():
-    return {
-        "message": "DataMind Analyst API is running",
-        "version": "0.2.0"
-    }
+    return {"message": "Anshora Analyst API is running", "version": "1.0.0", "docs": "/docs"}
 
 
 @app.get("/health")
-def health_check():
-    return {
-        "status": "healthy"
-    }
+def health():
+    return {"status": "healthy"}

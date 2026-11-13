@@ -1,11 +1,19 @@
-fastapi
-uvicorn[standard]
-python-multipart
-pandas
-openpyxl
-xlrd
-pyarrow
-numpy
-python-dotenv
-requests
-  
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+pandas>=2.2
+numpy>=1.26
+pyarrow>=15
+openpyxl>=3.1
+xlrd>=2.0
+duckdb>=1.0
+PyJWT>=2.7
+python-dotenv>=1.0
+requests>=2.31
+reportlab>=4.0
+sqlalchemy>=2.0
+alembic>=1.13
+psycopg2-binary>=2.9
+# optional DB drivers for the SQL connector (install what you need):
+#   pip install psycopg2-binary   # PostgreSQL
+#   pip install pymysql           # MySQL / MariaDB
